@@ -1,0 +1,3 @@
+../drivers/fsl_lpadc.h:1128:20:LPADC_DoSoftwareTrigger	16	static
+../drivers/fsl_adc.c:11:6:ADC_Init	104	static
+../drivers/fsl_adc.c:76:10:ADC_ReadRaw	24	static

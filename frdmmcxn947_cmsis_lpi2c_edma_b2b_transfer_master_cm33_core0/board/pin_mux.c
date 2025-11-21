@@ -60,8 +60,7 @@ BOARD_InitPins:
  * END ****************************************************************************************************************/
 void BOARD_InitPins(void)
 {
-
-	/* Enables the clock for PORT1: Enables clock */
+    /* Enables the clock for PORT1: Enables clock */
     CLOCK_EnableClock(kCLOCK_Port1);
 
     const port_pin_config_t port1_8_pinA1_config = {/* Internal pull-up/down resistor is disabled */

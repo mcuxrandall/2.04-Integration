@@ -695,7 +695,22 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0.null.781765101" name="frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0" projectType="com.crt.advproject.projecttype.exe"/>
+		<project id="frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0.null.1163349349" name="frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0" projectType="com.crt.advproject.projecttype.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.2050127966;com.crt.advproject.config.exe.release.2050127966.;com.crt.advproject.gcc.exe.release.82733865;com.crt.advproject.compiler.input.92766511">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.1087649725;com.crt.advproject.config.exe.debug.1087649725.;com.crt.advproject.gas.exe.debug.1568391798;com.crt.advproject.assembler.input.916361734">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.2050127966;com.crt.advproject.config.exe.release.2050127966.;com.crt.advproject.gas.exe.release.993174596;com.crt.advproject.assembler.input.1150409829">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.1087649725;com.crt.advproject.config.exe.debug.1087649725.;com.crt.advproject.gcc.exe.debug.1375593115;com.crt.advproject.compiler.input.1107670725">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
@@ -720,12 +735,12 @@
 &lt;vendor&gt;NXP&lt;/vendor&gt;&#13;
 &lt;memory can_program="true" id="Flash" is_ro="true" size="2048" type="Flash"/&gt;&#13;
 &lt;memory id="RAM" size="512" type="RAM"/&gt;&#13;
-&lt;memoryInstance derived_from="Flash" driver="MCXNxxx.cfx" id="PROGRAM_FLASH0" location="0x00000000" size="0x00100000"/&gt;&#13;
-&lt;memoryInstance derived_from="Flash" driver="MCXNxxx.cfx" id="PROGRAM_FLASH1" location="0x00100000" size="0x00100000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" id="SRAM" location="0x20000000" size="0x00060000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" id="SRAMX" location="0x04000000" size="0x00018000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" id="SRAMH" location="0x20060000" size="0x00008000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" id="USB_RAM" location="0x400ba000" size="0x00001000"/&gt;&#13;
+&lt;memoryInstance derived_from="Flash" driver="MCXNxxx.cfx" edited="true" id="PROGRAM_FLASH0" location="0x0" size="0x100000"/&gt;&#13;
+&lt;memoryInstance derived_from="Flash" driver="MCXNxxx.cfx" edited="true" id="PROGRAM_FLASH1" location="0x100000" size="0x100000"/&gt;&#13;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM" location="0x20000000" size="0x60000"/&gt;&#13;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAMX" location="0x4000000" size="0x18000"/&gt;&#13;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAMH" location="0x20060000" size="0x8000"/&gt;&#13;
+&lt;memoryInstance derived_from="RAM" edited="true" id="USB_RAM" location="0x400ba000" size="0x1000"/&gt;&#13;
 &lt;/chip&gt;&#13;
 &lt;processor&gt;&#13;
 &lt;name gcc_name="cortex-m33"&gt;Cortex-M33&lt;/name&gt;&#13;
@@ -739,20 +754,4 @@
 &lt;/infoList&gt;&#13;
 &lt;/TargetConfig&gt;</projectStorage>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.1506794457;com.crt.advproject.config.exe.debug.1506794457.;com.crt.advproject.gas.exe.debug.1101139386;com.crt.advproject.assembler.input.715430299">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.4163203;com.crt.advproject.config.exe.release.4163203.;com.crt.advproject.gcc.exe.release.1924349261;com.crt.advproject.compiler.input.2008814495">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.1506794457;com.crt.advproject.config.exe.debug.1506794457.;com.crt.advproject.gcc.exe.debug.1099718059;com.crt.advproject.compiler.input.1574725588">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.4163203;com.crt.advproject.config.exe.release.4163203.;com.crt.advproject.gas.exe.release.1298398522;com.crt.advproject.assembler.input.250008840">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
-	<storageModule moduleId="refreshScope"/>
 </cproject>

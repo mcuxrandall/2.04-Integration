@@ -28,7 +28,7 @@
 #define SSD1306_DATA_MODE          (0x40U)
 
 /* Define the font scaling factor. Change this value to adjust the text size. */
-#define FONT_SCALE_FACTOR          2
+#define FONT_SCALE_FACTOR          3
 
 /* Font data for 5x7 characters. */
 static const uint8_t font5x7_data[] = {
@@ -334,19 +334,17 @@ static void ssd1306_refresh_display(void)
 int main(void)
 {
     /*Init BOARD*/
-    BOARD_InitHardware(); // changes to make it arduino
-    /* Initialize Arduino J2 I2C pins (SDA = P4_0, SCL = P4_1) */
-    // LPI2C2_InitPins(); // changes to make it arduino
+    BOARD_InitHardware();
 
 /* DMAMux init and EDMA init */
-	#if (defined(FSL_FEATURE_SOC_DMAMUX_COUNT) && FSL_FEATURE_SOC_DMAMUX_COUNT)
-		DMAMUX_Init(EXAMPLE_LPI2C_DMAMUX_BASEADDR);
-	#endif
+#if (defined(FSL_FEATURE_SOC_DMAMUX_COUNT) && FSL_FEATURE_SOC_DMAMUX_COUNT)
+    DMAMUX_Init(EXAMPLE_LPI2C_DMAMUX_BASEADDR);
+#endif
     edma_config_t edmaConfig = {0};
     EDMA_GetDefaultConfig(&edmaConfig);
-	#if defined(BOARD_GetEDMAConfig)
-		BOARD_GetEDMAConfig(edmaConfig);
-	#endif
+#if defined(BOARD_GetEDMAConfig)
+    BOARD_GetEDMAConfig(edmaConfig);
+#endif
     EDMA_Init(EXAMPLE_LPI2C_DMA_BASEADDR, &edmaConfig);
 
     /* Initialize the LPI2C master peripheral */

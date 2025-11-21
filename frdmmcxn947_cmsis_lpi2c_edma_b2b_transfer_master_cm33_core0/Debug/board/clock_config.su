@@ -1,4 +1,4 @@
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace\frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
 ../board/clock_config.c:54:6:BOARD_InitBootClocks	8	static
 ../board/clock_config.c:90:6:BOARD_BootClockFRO12M	24	static
 ../board/clock_config.c:157:6:BOARD_BootClockFROHF48M	24	static

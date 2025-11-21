@@ -6,7 +6,7 @@
  * Generated linker script file for MCXN947
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on Oct 22, 2025, 11:13:43 AM
+ * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on Sep 24, 2025, 11:21:46 AM
  */
 
 INCLUDE "frdmmcxn947_cmsis_lpi2c_edma_b2b_transfer_master_cm33_core0_Debug_library.ld"
