@@ -1,0 +1,31 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../trustzone/resource_config.c 
+
+C_DEPS += \
+./trustzone/resource_config.d 
+
+OBJS += \
+./trustzone/resource_config.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+trustzone/%.o: ../trustzone/%.c trustzone/subdir.mk
+	@echo 'Building file: $<'
+	@echo 'Invoking: MCU C Compiler'
+	arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DCPU_MCXN947VDF -DCPU_MCXN947VDF_cm33 -DCPU_MCXN947VDF_cm33_core0 -DMCUXPRESSO_SDK -DSDK_DEBUGCONSOLE=1 -DMCUX_META_BUILD -DMCXN947_cm33_core0_SERIES -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -DSDK_OS_BAREMETAL -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/drivers" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/CMSIS" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/CMSIS/m-profile" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/CMSIS_driver/Include" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/device" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/device/periph" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/utilities" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/utilities/str" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/utilities/debug_console_lite" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/component/uart" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/board" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/source" -I"/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/trustzone" -O0 -fno-common -g3 -gdwarf-4 -mcpu=cortex-m33 -c -ffunction-sections -fdata-sections -fno-builtin -imacros "/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/source/mcux_config.h" -fmerge-constants -fmacro-prefix-map="$(<D)/"= -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+
+clean: clean-trustzone
+
+clean-trustzone:
+	-$(RM) ./trustzone/resource_config.d ./trustzone/resource_config.o
+
+.PHONY: clean-trustzone
+

@@ -1,0 +1,4 @@
+../board/peripherals.c:128:10:LPSPI6_GetFreq	4	static
+../board/peripherals.c:132:13:LP_FLEXCOMM6_init	8	static
+../board/peripherals.c:146:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:155:6:BOARD_InitBootPeripherals	8	static

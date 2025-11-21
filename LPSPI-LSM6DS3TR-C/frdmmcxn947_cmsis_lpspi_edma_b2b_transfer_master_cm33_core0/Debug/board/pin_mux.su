@@ -1,0 +1,7 @@
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/drivers/fsl_port.h:360:20:PORT_SetPinConfig	32	static
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/frdmmcxn947_cmsis_lpspi_edma_b2b_transfer_master_cm33_core0/drivers/fsl_port.h:463:20:PORT_SetPinMux	24	static
+../board/pin_mux.c:33:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:63:6:BOARD_InitPins	16	static
+../board/pin_mux.c:173:6:LPSPI1_InitPins	4	static
+../board/pin_mux.c:193:6:LPSPI1_DeinitPins	4	static
