@@ -1,0 +1,8 @@
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_port.h:360:20:PORT_SetPinConfig	32	static
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_port.h:463:20:PORT_SetPinMux	24	static
+../board/pin_mux.c:320:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:355:6:BOARD_InitDEBUG_UARTPins	32	static
+../board/pin_mux.c:534:6:BOARD_InitSWD_DEBUGPins	24	static
+../board/pin_mux.c:629:6:BOARD_InitLEDsPins	24	static
+../board/pin_mux.c:721:6:BOARD_InitBUTTONsPins	24	static

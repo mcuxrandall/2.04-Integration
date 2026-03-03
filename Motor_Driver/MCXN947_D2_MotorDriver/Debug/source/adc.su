@@ -1,0 +1,4 @@
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_lpadc.h:1128:20:LPADC_DoSoftwareTrigger	16	static
+../source/adc.c:10:6:adc_init	88	static
+../source/adc.c:46:10:adc_read_pot	24	static

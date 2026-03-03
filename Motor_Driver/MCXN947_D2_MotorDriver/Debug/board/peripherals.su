@@ -1,0 +1,8 @@
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_spc.h:1093:20:SPC_EnableActiveModeAnalogModules	16	static
+C:\Users\mccof\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_D2_MotorDriver\drivers/fsl_ctimer.h:517:20:CTIMER_StartTimer	16	static
+../board/peripherals.c:142:13:ADC1_init	8	static
+../board/peripherals.c:302:13:PWM0_init	8	static
+../board/peripherals.c:352:13:VREF0_init	8	static
+../board/peripherals.c:399:13:CTIMER0_init	8	static
+../board/peripherals.c:409:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:421:6:BOARD_InitBootPeripherals	8	static
