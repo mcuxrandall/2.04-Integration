@@ -1,6 +1,0 @@
-../source/lsm6ds3tr_c_read_data_polling.c:133:6:lsm6ds3tr_c_read_data_polling	72	static
-../source/lsm6ds3tr_c_read_data_polling.c:246:16:platform_write	24	static
-../source/lsm6ds3tr_c_read_data_polling.c:274:16:platform_read	24	static
-../source/lsm6ds3tr_c_read_data_polling.c:299:13:tx_com	16	static
-../source/lsm6ds3tr_c_read_data_polling.c:316:13:platform_delay	16	static
-../source/lsm6ds3tr_c_read_data_polling.c:328:13:platform_init	4	static
