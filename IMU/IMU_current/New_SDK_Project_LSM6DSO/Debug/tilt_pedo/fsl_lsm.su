@@ -1,0 +1,8 @@
+../tilt_pedo/fsl_lsm.c:11:10:LSM_Init	24	static
+../tilt_pedo/fsl_lsm.c:225:10:LSM_GetVal	32	static
+../tilt_pedo/fsl_lsm.c:244:10:LSM_SetVal	24	static
+../tilt_pedo/fsl_lsm.c:263:10:LSM_GetPedometerCnt	32	static
+../tilt_pedo/fsl_lsm.c:282:10:LSM_ReadReg	48	static
+../tilt_pedo/fsl_lsm.c:297:10:LSM_WriteReg	48	static
+../tilt_pedo/fsl_lsm.c:311:10:LSM_SetMemBank	24	static
+../tilt_pedo/fsl_lsm.c:328:10:LSM_GetMemBank	24	static

@@ -1,0 +1,2 @@
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/New_SDK_Project_LSM6DSO/CMSIS/core_cm33.h:2679:34:__NVIC_SystemReset	4	static
+../component/reset/fsl_adapter_reset.c:27:6:HAL_ResetMCU	8	static
