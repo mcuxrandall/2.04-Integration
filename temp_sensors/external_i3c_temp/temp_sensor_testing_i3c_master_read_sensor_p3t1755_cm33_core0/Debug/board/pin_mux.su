@@ -1,0 +1,10 @@
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/temp_sensor_testing_i3c_master_read_sensor_p3t1755_cm33_core0/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/temp_sensor_testing_i3c_master_read_sensor_p3t1755_cm33_core0/drivers/fsl_port.h:360:20:PORT_SetPinConfig	32	static
+/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/temp_sensor_testing_i3c_master_read_sensor_p3t1755_cm33_core0/drivers/fsl_port.h:651:20:PORT_DisableEFTDetectInterrupts	16	static
+../board/pin_mux.c:320:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:347:6:BOARD_InitPins	16	static
+../board/pin_mux.c:423:6:BOARD_InitDEBUG_UARTPins	16	static
+../board/pin_mux.c:497:6:BOARD_InitSWD_DEBUGPins	24	static
+../board/pin_mux.c:594:6:BOARD_InitLEDsPins	24	static
+../board/pin_mux.c:691:6:BOARD_InitBUTTONsPins	16	static
+../board/pin_mux.c:767:6:BOARD_InitI3CPins	24	static
