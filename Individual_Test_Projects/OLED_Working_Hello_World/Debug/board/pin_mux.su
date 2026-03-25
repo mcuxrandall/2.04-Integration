@@ -1,0 +1,6 @@
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\OLED_Working_Hello_World\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\OLED_Working_Hello_World\drivers/fsl_port.h:360:20:PORT_SetPinConfig	32	static
+../board/pin_mux.c:35:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:61:6:BOARD_InitPins	16	static
+../board/pin_mux.c:133:6:LPI2C2_InitPins	16	static
+../board/pin_mux.c:205:6:LPI2C2_DeinitPins	16	static

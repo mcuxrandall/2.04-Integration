@@ -1,0 +1,7 @@
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+../board/clock_config.c:46:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:83:6:BOARD_BootClockFRO12M	24	static
+../board/clock_config.c:152:6:BOARD_BootClockFROHF48M	24	static
+../board/clock_config.c:226:6:BOARD_BootClockFROHF144M	24	static
+../board/clock_config.c:314:6:BOARD_BootClockPLL150M	48	static
+../board/clock_config.c:412:6:BOARD_BootClockPLL100M	48	static

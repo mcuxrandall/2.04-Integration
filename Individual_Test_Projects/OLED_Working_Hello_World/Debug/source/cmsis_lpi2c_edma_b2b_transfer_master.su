@@ -1,0 +1,10 @@
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:225:13:lpi2c_master_callback	16	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:241:13:i2c_wait_for_transfer	16	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:267:13:ssd1306_write_command	24	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:281:13:ssd1306_init	16	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:298:13:ssd1306_clear_display	8	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:309:13:ssd1306_draw_pixel	24	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:327:13:ssd1306_draw_char	32	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:354:13:ssd1306_draw_text	16	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:384:13:ssd1306_refresh_display	24	static
+../source/cmsis_lpi2c_edma_b2b_transfer_master.c:442:5:main	88	static

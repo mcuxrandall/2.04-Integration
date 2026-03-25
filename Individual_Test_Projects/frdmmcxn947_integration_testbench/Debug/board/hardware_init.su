@@ -1,0 +1,5 @@
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\CMSIS/core_cm33.h:2555:22:__NVIC_SetPriority	16	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\CMSIS/core_cm33.h:3108:26:SysTick_Config	16	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_gpio.h:345:20:GPIO_PinWrite	24	static
+../board/hardware_init.c:15:6:BOARD_InitHardware	8	static

@@ -1,0 +1,3 @@
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\OLED_Working_Hello_World\drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
+../board/hardware_init.c:19:6:BOARD_InitHardware	8	static
+../board/hardware_init.c:37:10:LPI2C2_GetFreq	8	static

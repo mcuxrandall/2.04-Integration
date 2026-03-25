@@ -1,0 +1,10 @@
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_spc.h:1093:20:SPC_EnableActiveModeAnalogModules	16	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_ctimer.h:517:20:CTIMER_StartTimer	16	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_1\frdmmcxn947_integration_testbench\drivers/fsl_lpi2c.h:669:20:LPI2C_MasterEnableDMA	16	static
+../source/peripherals.c:141:13:ADC1_init	8	static
+../source/peripherals.c:301:13:PWM0_init	8	static
+../source/peripherals.c:351:13:VREF0_init	8	static
+../source/peripherals.c:398:13:CTIMER0_init	8	static
+../source/peripherals.c:464:13:LP_FLEXCOMM2_init	8	static
+../source/peripherals.c:474:6:BOARD_InitPeripherals	8	static
+../source/peripherals.c:487:6:BOARD_InitBootPeripherals	8	static
