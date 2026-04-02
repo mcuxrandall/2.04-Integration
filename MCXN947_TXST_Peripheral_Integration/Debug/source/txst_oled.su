@@ -1,0 +1,10 @@
+../source/txst_oled.c:105:13:lpi2c_master_callback	16	static
+../source/txst_oled.c:121:13:i2c_wait_for_transfer	16	static
+../source/txst_oled.c:147:13:ssd1306_write_command	24	static
+../source/txst_oled.c:161:13:ssd1306_init	16	static
+../source/txst_oled.c:178:13:ssd1306_clear_display	8	static
+../source/txst_oled.c:189:13:ssd1306_draw_pixel	24	static
+../source/txst_oled.c:207:13:ssd1306_draw_char	32	static
+../source/txst_oled.c:234:13:ssd1306_draw_text	16	static
+../source/txst_oled.c:264:13:ssd1306_refresh_display	24	static
+../source/txst_oled.c:322:13:init_oled	88	static

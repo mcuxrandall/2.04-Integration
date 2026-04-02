@@ -1,0 +1,16 @@
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h:1105:20:PWM_SetPwmLdok	16	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:345:20:GPIO_PinWrite	24	static
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:427:24:GPIO_PinRead	16	static
+../source/txst_imu.c:45:12:txst_i3c_init	96	static
+../source/txst_oled.c:225:13:lpi2c_master_callback	16	static
+../source/txst_oled.c:241:13:i2c_wait_for_transfer	16	static
+../source/txst_oled.c:267:13:ssd1306_write_command	24	static
+../source/txst_oled.c:281:13:ssd1306_init	16	static
+../source/txst_oled.c:298:13:ssd1306_clear_display	8	static
+../source/txst_oled.c:309:13:ssd1306_draw_pixel	24	static
+../source/txst_oled.c:327:13:ssd1306_draw_char	32	static
+../source/txst_oled.c:354:13:ssd1306_draw_text	16	static
+../source/txst_oled.c:384:13:ssd1306_refresh_display	24	static
+../source/txst_oled.c:443:13:init_oled	88	static
+../source/MCXN947_TXST_Peripheral_Integration.c:32:6:output_RGB_val	32	static
+../source/MCXN947_TXST_Peripheral_Integration.c:43:5:main	32	static
