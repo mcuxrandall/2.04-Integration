@@ -1,0 +1,71 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.init
+
+RM := rm -rf
+
+# All of the sources participating in the build are defined here
+-include sources.mk
+-include utilities/str/subdir.mk
+-include utilities/debug_console/subdir.mk
+-include utilities/subdir.mk
+-include startup/subdir.mk
+-include source/subdir.mk
+-include drivers/subdir.mk
+-include device/subdir.mk
+-include component/uart/subdir.mk
+-include component/serial_manager/subdir.mk
+-include component/lists/subdir.mk
+-include component/i2c/subdir.mk
+-include board/subdir.mk
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+endif
+
+-include ../makefile.defs
+
+OPTIONAL_TOOL_DEPS := \
+$(wildcard ../makefile.defs) \
+$(wildcard ../makefile.init) \
+$(wildcard ../makefile.targets) \
+
+
+BUILD_ARTIFACT_NAME := IMU_WHOAMI
+BUILD_ARTIFACT_EXTENSION := axf
+BUILD_ARTIFACT_PREFIX :=
+BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
+
+# Add inputs and outputs from these tool invocations to the build variables 
+
+# All Target
+all:
+	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
+
+# Main-build Target
+main-build: IMU_WHOAMI.axf
+
+# Tool invocations
+IMU_WHOAMI.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+	@echo 'Building target: $@'
+	@echo 'Invoking: MCU Linker'
+	arm-none-eabi-gcc -nostdlib -Xlinker -Map="IMU_WHOAMI.map" -Xlinker -u _printf_float -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T IMU_WHOAMI_Debug.ld -o "IMU_WHOAMI.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# Other Targets
+clean:
+	-$(RM) IMU_WHOAMI.axf
+	-@echo ' '
+
+post-build:
+	-@echo 'Performing post-build steps'
+	-arm-none-eabi-size "IMU_WHOAMI.axf"; # arm-none-eabi-objcopy -v -O binary "IMU_WHOAMI.axf" "IMU_WHOAMI.bin" ; # checksum -p MCXN947 -d "IMU_WHOAMI.bin";
+	-@echo ' '
+
+.PHONY: all clean dependents main-build post-build
+
+-include ../makefile.targets
