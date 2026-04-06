@@ -1,9 +1,13 @@
 # 2.04-Integration
 Early code for Senior Design 2.04 NXP Intgegration
 
-## IMU
+## IMU WHOAMI (use to ensure communication with IMU)
 ### Running IMU "whoami" code
 Import the IMU/IMU_current/New_SDK_Project_LSM6DSO into MCUXpresso and run on the MCXN947 and debug if possible.
+
+## IMU Gyroscope Polling (includes whoami)
+### Running Gryoscope Polling Code
+Import the Import the individual_test_projects/i3c_imu_gyroscope_polling into MCUXpresso and run on the MCXN947.
 
 ## Temperature Sensors
 ### Internal Temperaure Sensor
