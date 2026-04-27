@@ -6,7 +6,7 @@
  * Generated linker script file for MCXN947
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on Apr 27, 2026, 11:02:22 AM
+ * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on Apr 27, 2026, 4:30:15 PM
  */
 
 INCLUDE "MCXN947_TXST_Peripheral_Integration_Debug_library.ld"

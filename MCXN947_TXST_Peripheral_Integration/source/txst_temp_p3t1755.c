@@ -188,7 +188,7 @@ status_t p3t1755_set_dynamic_address(void)
 /*!
  * @brief Main function
  */
-void init_i3c_temp(void) {
+void read_i3c_temp(void) {
     status_t result = kStatus_Success;
     i3c_master_config_t masterConfig;
     p3t1755_config_t p3t1755Config;

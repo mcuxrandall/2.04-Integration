@@ -33,7 +33,7 @@
 #include "txst_oled.h"
 #include "txst_rgb.h"
 #include "txst_sd_card.h"
-#include "txst_temp_lm75b.h"
+//#include "txst_temp_lm75b.h"
 #include "txst_temp_p3t1755.h"
 
 
@@ -43,6 +43,10 @@
 //    // GPIO_PortToggle(BOARD_LED_GPIO, 1u << BOARD_LED_GPIO_PIN);
 //    // If you run the LED Blinky demo with no systick, you get stuck in an infinite loop.
 //}
+
+/*
+ * TO ADD I3C TEMP READ FUNCTION, CALL the read_i3c_temp() function
+ */
 
 
 int main(void) {
