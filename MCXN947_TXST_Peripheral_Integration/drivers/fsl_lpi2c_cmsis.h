@@ -22,10 +22,9 @@
 #define FSL_LPI2C_CMSIS_H_
 
 #include "fsl_common.h"
+#include "Driver_I2C.h"
 #include "RTE_Device.h"
 #include "fsl_lpi2c.h"
-
-#include "../../OLED_Working_Hello_World/CMSIS_driver/Include/Driver_I2C.h"
 #if (defined(FSL_FEATURE_SOC_DMAMUX_COUNT) && FSL_FEATURE_SOC_DMAMUX_COUNT)
 #include "fsl_dmamux.h"
 #endif

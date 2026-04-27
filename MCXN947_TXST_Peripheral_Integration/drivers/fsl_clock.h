@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 NXP
+ * Copyright 2022-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -20,8 +20,8 @@
 
 /*! @name Driver version */
 /*@{*/
-/*! @brief CLOCK driver version 2.0.0. */
-#define FSL_CLOCK_DRIVER_VERSION (MAKE_VERSION(2, 0, 0))
+/*! @brief CLOCK driver version 2.0.2. */
+#define FSL_CLOCK_DRIVER_VERSION (MAKE_VERSION(2, 0, 2))
 /*@}*/
 
 /*! @brief Configure whether driver controls clock
@@ -51,7 +51,11 @@
 
 /* Definition for delay API in clock driver, users can redefine it to the real application. */
 #ifndef SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY
+#if defined(MCXN556S_cm33_core0_SERIES) || defined(MCXN556S_cm33_core1_SERIES)
+#define SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY (170000000UL)
+#else
 #define SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY (150000000UL)
+#endif
 #endif
 
 /*! @brief Clock ip name array for ROM. */
@@ -80,9 +84,9 @@
         kCLOCK_Enet \
     }
 /*! @brief Clock ip name array for GPIO. */
-#define GPIO_CLOCKS                                                          \
-    {                                                                        \
-        kCLOCK_Gpio0, kCLOCK_Gpio1, kCLOCK_Gpio2, kCLOCK_Gpio3, kCLOCK_Gpio4 \
+#define GPIO_CLOCKS                                                                       \
+    {                                                                                     \
+        kCLOCK_Gpio0, kCLOCK_Gpio1, kCLOCK_Gpio2, kCLOCK_Gpio3, kCLOCK_Gpio4, kCLOCK_None \
     }
 /*! @brief Clock ip name array for GDET. */
 #define GDET_CLOCKS                                                          \
@@ -539,7 +543,7 @@ typedef enum _clock_name
 #define GET_ID_ITEM(connection)      ((connection)&0xFFFFU)
 #define GET_ID_NEXT_ITEM(connection) ((connection) >> 16U)
 #define GET_ID_ITEM_MUX(connection)  (((uint16_t)connection) & 0xFFFU)
-#define GET_ID_ITEM_SEL(connection)  ((uint8_t)((((uint32_t)(connection)&0xF000U) >> 12U) - 1U))
+#define GET_ID_ITEM_SEL(connection)  ((uint8_t)(((((uint32_t)(connection)&0xF000U) >> 12U) - 1U) & 0xFFU))
 #define GET_ID_SELECTOR(connection)  ((connection)&0xF000000U)
 
 #define CM_SYSTICKCLKSEL0   0U
@@ -1040,7 +1044,7 @@ typedef enum _clock_attach_id
     kCLK_1M_to_I3C1FCLKS = MUX_A(CM_I3C1FCLKSSEL, 0),            /*!< Attach CLK_1M to I3C1FCLKS. */
     kNONE_to_I3C1FCLKS   = MUX_A(CM_I3C1FCLKSSEL, 7),            /*!< Attach NONE to I3C1FCLKS. */
 
-    kNONE_to_NONE = (int)0x80000000U,                            /*!< Attach NONE to NONE. */
+    kNONE_to_NONE = (0xFFFFFFFFU),                               /*!< Attach NONE to NONE. */
 
 } clock_attach_id_t;
 
@@ -1490,6 +1494,11 @@ static inline void CLOCK_EnableClock(clock_ip_name_t clk)
     uint32_t index = CLK_GATE_ABSTRACT_REG_OFFSET(clk);
     uint32_t bit   = CLK_GATE_ABSTRACT_BITS_SHIFT(clk);
 
+    if (clk == kCLOCK_None)
+    {
+        return;
+    }
+
     if (index == (uint32_t)REG_PWM0SUBCTL)
     {
         SYSCON->PWM0SUBCTL |= (1UL << bit);
@@ -1502,6 +1511,7 @@ static inline void CLOCK_EnableClock(clock_ip_name_t clk)
     }
     else
     {
+        assert(index < SYSCON_AHBCLKCTRLSET_COUNT);
         SYSCON->AHBCLKCTRLSET[index] = (1UL << bit);
     }
 }
@@ -1515,6 +1525,11 @@ static inline void CLOCK_DisableClock(clock_ip_name_t clk)
 {
     uint32_t index = CLK_GATE_ABSTRACT_REG_OFFSET(clk);
     uint32_t bit   = CLK_GATE_ABSTRACT_BITS_SHIFT(clk);
+
+    if (clk == kCLOCK_None)
+    {
+        return;
+    }
 
     if (index == (uint32_t)REG_PWM0SUBCTL)
     {
@@ -1534,6 +1549,7 @@ static inline void CLOCK_DisableClock(clock_ip_name_t clk)
     }
     else
     {
+        assert(index < SYSCON_AHBCLKCTRLSET_COUNT);
         SYSCON->AHBCLKCTRLCLR[index] = (1UL << bit);
     }
 }

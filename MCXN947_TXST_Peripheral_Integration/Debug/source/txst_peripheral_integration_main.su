@@ -1,5 +1,5 @@
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:345:20:GPIO_PinWrite	24	static
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:427:24:GPIO_PinRead	16	static
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_ctimer.h:517:20:CTIMER_StartTimer	16	static
+/Users/andrew/Documents/Final_Workspace/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h:345:20:GPIO_PinWrite	24	static
+/Users/andrew/Documents/Final_Workspace/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h:427:24:GPIO_PinRead	16	static
+/Users/andrew/Documents/Final_Workspace/MCXN947_TXST_Peripheral_Integration/drivers/fsl_ctimer.h:517:20:CTIMER_StartTimer	16	static
 ../source/txst_motor.h:26:6:motor_pwm_init	40	static
 ../source/txst_peripheral_integration_main.c:48:5:main	48	static

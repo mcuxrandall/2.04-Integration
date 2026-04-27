@@ -60,7 +60,7 @@ extern "C"
 {
 #endif
 
-#include "../../../MCXN947_TXST_Peripheral_Integration/CMSIS_driver/Include/Driver_Common.h"
+#include "Driver_Common.h"
 
 #define ARM_I2C_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,4)  /* API version */
 

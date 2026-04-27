@@ -1,8 +1,1 @@
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_spc.h:1093:20:SPC_EnableActiveModeAnalogModules	16	static
-../board/peripherals.c:129:13:ADC1_init	4	static
-../board/peripherals.c:288:13:PWM0_init	8	static
-../board/peripherals.c:338:13:VREF0_init	8	static
-../board/peripherals.c:380:13:CTIMER0_init	4	static
-../board/peripherals.c:426:13:LP_FLEXCOMM2_init	4	static
-../board/peripherals.c:433:6:BOARD_InitPeripherals	8	static
-../board/peripherals.c:446:6:BOARD_InitBootPeripherals	8	static
+../board/peripherals.c:21:6:BOARD_InitBootPeripherals	4	static

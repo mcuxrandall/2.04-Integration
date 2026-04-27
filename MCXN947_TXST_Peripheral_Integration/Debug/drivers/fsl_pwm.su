@@ -1,5 +1,6 @@
-../drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
-../drivers/fsl_clock.h:1514:20:CLOCK_DisableClock	24	static
+../drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+../drivers/fsl_clock.h:1524:20:CLOCK_DisableClock	24	static
+../drivers/fsl_reset.h:308:20:RESET_ReleasePeripheralReset	16	static
 ../drivers/fsl_pwm.c:70:24:PWM_GetComplementU16	16	static
 ../drivers/fsl_pwm.c:75:24:dutyCycleToReloadValue	16	static
 ../drivers/fsl_pwm.c:81:17:PWM_GetInstance	24	static

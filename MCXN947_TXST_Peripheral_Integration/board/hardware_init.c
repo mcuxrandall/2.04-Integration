@@ -29,7 +29,8 @@ void BOARD_InitHardware(void)
     CLOCK_EnableClock(kCLOCK_Dma0);
 
     // initialize pins
-    BOARD_InitPins();
+    //BOARD_InitPins();
+    BOARD_InitHardware();
     BOARD_BootClockFRO12M();
     /* Initialize the systick module. */
     SysTick_Config(12000000UL);

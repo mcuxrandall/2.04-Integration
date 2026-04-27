@@ -1,7 +1,7 @@
-C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\CMSIS/core_cm33.h:2358:22:__NVIC_EnableIRQ	16	static
-../drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
-../drivers/fsl_clock.h:1514:20:CLOCK_DisableClock	24	static
-../drivers/fsl_common_arm.h:672:24:EnableIRQ	24	static
+/Users/andrew/Documents/Final_Workspace/MCXN947_TXST_Peripheral_Integration/CMSIS/core_cm33.h:2358:22:__NVIC_EnableIRQ	16	static
+../drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+../drivers/fsl_clock.h:1524:20:CLOCK_DisableClock	24	static
+../drivers/fsl_common_arm.h:714:24:EnableIRQ	24	static
 ../drivers/fsl_i3c.h:861:24:I3C_MasterGetStatusFlags	16	static
 ../drivers/fsl_i3c.h:884:20:I3C_MasterClearStatusFlags	16	static
 ../drivers/fsl_i3c.h:901:24:I3C_MasterGetErrorStatusFlags	16	static

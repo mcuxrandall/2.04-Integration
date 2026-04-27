@@ -1,5 +1,5 @@
 /*
- * Copyright 2022, NXP
+ * Copyright 2022-2025, NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -46,6 +46,12 @@ void RESET_SetPeripheralReset(reset_ip_name_t peripheral)
     volatile uint32_t *pResetCtrl;
 
     assert(bitPos < 32u);
+    assert(regIndex < SYSCON_PRESETCTRLSET_COUNT);
+
+    if (peripheral == kRST_None)
+    {
+        return;
+    }
 
     /* reset register is in SYSCON */
     /* set bit */
@@ -73,6 +79,12 @@ void RESET_ClearPeripheralReset(reset_ip_name_t peripheral)
     volatile uint32_t *pResetCtrl;
 
     assert(bitPos < 32u);
+    assert(regIndex < SYSCON_PRESETCTRLSET_COUNT);
+
+    if (peripheral == kRST_None)
+    {
+        return;
+    }
 
     /* reset register is in SYSCON */
 
@@ -95,6 +107,11 @@ void RESET_ClearPeripheralReset(reset_ip_name_t peripheral)
  */
 void RESET_PeripheralReset(reset_ip_name_t peripheral)
 {
+    if (peripheral == kRST_None)
+    {
+        return;
+    }
+
     RESET_SetPeripheralReset(peripheral);
     RESET_ClearPeripheralReset(peripheral);
 }

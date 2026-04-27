@@ -1,5 +1,5 @@
-../drivers/fsl_clock.h:1488:20:CLOCK_EnableClock	24	static
-../drivers/fsl_clock.h:1514:20:CLOCK_DisableClock	24	static
+../drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+../drivers/fsl_clock.h:1524:20:CLOCK_DisableClock	24	static
 ../drivers/fsl_lpflexcomm.c:73:13:LP_FLEXCOMM_PeripheralIsPresent	16	static
 ../drivers/fsl_lpflexcomm.c:94:10:LP_FLEXCOMM_GetBaseAddress	16	static
 ../drivers/fsl_lpflexcomm.c:104:10:LP_FLEXCOMM_GetInterruptStatus	24	static

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2025 NXP
+ * Copyright 2022-2026 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -19,8 +19,8 @@
 
 /*! @name Driver version */
 /*! @{ */
-/*! @brief SPC driver version 2.8.0. */
-#define FSL_SPC_DRIVER_VERSION (MAKE_VERSION(2, 8, 0))
+/*! @brief SPC driver version 2.12.0. */
+#define FSL_SPC_DRIVER_VERSION (MAKE_VERSION(2, 12, 0))
 /*! @} */
 
 #define SPC_EVD_CFG_REG_EVDISO_SHIFT   0UL
@@ -118,6 +118,7 @@ enum _spc_analog_module_control
 {
     kSPC_controlVref       = 1UL << 0UL,  /*!< Enable/disable VREF in active or low-power modes. */
     kSPC_controlUsb3vDet   = 1UL << 1UL,  /*!< Enable/disable USB3V_Det in active or low-power modes. */
+    kSPC_controlVbat       = 1UL << 2UL,  /*!< Enable/disable VBAT in active or low-power modes. */
     kSPC_controlDac0       = 1UL << 4UL,  /*!< Enable/disable DAC0 in active or low-power modes. */
     kSPC_controlDac1       = 1UL << 5UL,  /*!< Enable/disable DAC1 in active or low-power modes.  */
     kSPC_controlDac2       = 1UL << 6UL,  /*!< Enable/disable DAC2 in active or low-power modes. */
@@ -125,6 +126,7 @@ enum _spc_analog_module_control
     kSPC_controlOpamp1     = 1UL << 9UL,  /*!< Enable/disable OPAMP1 in active or low-power modes. */
     kSPC_controlOpamp2     = 1UL << 10UL, /*!< Enable/disable OPAMP2 in active or low-power modes. */
     kSPC_controlOpamp3     = 1UL << 11UL, /*!< Enable/disable OPAMP3 in active or low-power modes. */
+    kSPC_controlTsi0       = 1UL << 12UL, /*!< Enable/disable TSI0 in active or low-power modes. */
     kSPC_controlCmp0       = 1UL << 16UL, /*!< Enable/disable CMP0 in active or low-power modes. */
     kSPC_controlCmp1       = 1UL << 17UL, /*!< Enable/disable CMP1 in active or low-power modes. */
     kSPC_controlCmp2       = 1UL << 18UL, /*!< Enable/disable CMP2 in active or low-power modes. */
@@ -252,7 +254,9 @@ typedef enum _spc_core_ldo_voltage_level
                                            please refer to devices' RM for details. */
     kSPC_CoreLDO_MidDriveVoltage  = 0x1U,  /*!< Core LDO VDD regulator regulate to Mid Drive Voltage. */
     kSPC_CoreLDO_NormalVoltage    = 0x2U,  /*!< Core LDO VDD regulator regulate to Normal Voltage. */
+#if !(defined(FSL_FEATURE_MCX_SPC_SUPPORT_OVERDRIVE_VOLTAGE) && (FSL_FEATURE_MCX_SPC_SUPPORT_OVERDRIVE_VOLTAGE==0U))
     kSPC_CoreLDO_OverDriveVoltage = 0x3U,  /*!< Core LDO VDD regulator regulate to overdrive Voltage. */
+#endif
 } spc_core_ldo_voltage_level_t;
 
 /*!
@@ -300,7 +304,9 @@ typedef enum _spc_sram_operate_voltage
 {
     kSPC_sramOperateAt1P0V = 0x1U, /*!< SRAM configured for 1.0V operation. */
     kSPC_sramOperateAt1P1V = 0x2U, /*!< SRAM configured for 1.1V operation. */
+#if !(defined(FSL_FEATURE_MCX_SPC_SUPPORT_OVERDRIVE_VOLTAGE) && (FSL_FEATURE_MCX_SPC_SUPPORT_OVERDRIVE_VOLTAGE==0U))
     kSPC_sramOperateAt1P2V = 0x3U, /*!< SRAM configured for 1.2V operation. */
+#endif
 } spc_sram_operate_voltage_t;
 
 #if !(defined(FSL_FEATURE_MCX_SPC_HAS_NO_GLITCH_DETECT) && FSL_FEATURE_MCX_SPC_HAS_NO_GLITCH_DETECT)
@@ -558,6 +564,7 @@ static inline bool SPC_GetBusyStatusFlag(SPC_Type *base)
     return ((base->SC & SPC_SC_BUSY_MASK) != 0UL);
 }
 
+#if !(defined(FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_REQ_BIT ) && (FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_REQ_BIT ==0U))
 /*!
  * @brief Checks system low power request.
  *
@@ -584,7 +591,9 @@ static inline void SPC_ClearLowPowerRequest(SPC_Type *base)
 {
     base->SC |= SPC_SC_SPC_LP_REQ_MASK;
 }
+#endif /* FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_REQ_BIT  */
 
+#if !(defined(FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_MODE_BIT) && (FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_MODE_BIT==0U))
 /*!
  * @brief Check the last low-power mode that the power domain requested
  *
@@ -596,6 +605,7 @@ static inline spc_power_domain_low_power_mode_t SPC_GetRequestedLowPowerMode(SPC
 {
     return (spc_power_domain_low_power_mode_t)(uint32_t)((base->SC & SPC_SC_SPC_LP_MODE_MASK) >> SPC_SC_SPC_LP_MODE_SHIFT);
 }
+#endif /* FSL_FEATURE_MCX_SPC_HAS_SC_SPC_LP_MODE_BIT */
 
 #if (defined(FSL_FEATURE_MCX_SPC_HAS_SWITCH_STATE_BIT) && FSL_FEATURE_MCX_SPC_HAS_SWITCH_STATE_BIT)
 /*!
@@ -640,6 +650,7 @@ static inline bool SPC_CheckPowerDomainLowPowerRequest(SPC_Type *base, spc_power
 }
 #endif /* FSL_FEATURE_MCX_SPC_HAS_PD_STATUS_PWR_REQ_STATUS_BIT */
 
+#if !(defined(FSL_FEATURE_MCX_SPC_HAS_PD_STATUS_REG) && (FSL_FEATURE_MCX_SPC_HAS_PD_STATUS_REG == 0U))
 /*!
  * @brief Clears selected power domain's low power request flag.
  *
@@ -651,15 +662,15 @@ static inline void SPC_ClearPowerDomainLowPowerRequestFlag(SPC_Type *base, spc_p
     assert((uint8_t)powerDomainId < SPC_PD_STATUS_COUNT);
     base->PD_STATUS[(uint8_t)powerDomainId] |= SPC_PD_STATUS_PD_LP_REQ_MASK;
 }
+#endif /* FSL_FEATURE_MCX_SPC_HAS_PD_STATUS_REG */
 
 /*! @} */
 
-#if (defined(FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REG) && FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REG)
 /*!
  * @name SRAM Retention LDO Control APIs
  * @{
  */
-
+#if !(defined(FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REFTRIM_REG) && (FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REFTRIM_REG == 0U))
 /*!
  * @brief Trims SRAM retention regulator reference voltage, trim step is 12 mV, range is around 0.48V to 0.85V.
  *
@@ -671,7 +682,9 @@ static inline void SPC_TrimSRAMLdoRefVoltage(SPC_Type *base, uint8_t trimValue)
     base->SRAMRETLDO_REFTRIM =
         ((base->SRAMRETLDO_REFTRIM & ~SPC_SRAMRETLDO_REFTRIM_REFTRIM_MASK) | SPC_SRAMRETLDO_REFTRIM_REFTRIM(trimValue));
 }
+#endif
 
+#if (defined(FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REG) && FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REG)
 /*!
  * @brief Enables/disables SRAM retention LDO.
  *
@@ -715,9 +728,8 @@ static inline void SPC_UnRetainSRAMArray(SPC_Type *base, uint8_t mask)
 {
     base->SRAMRETLDO_CNTRL &= ~SPC_SRAMRETLDO_CNTRL_SRAM_RET_EN(mask);
 }
-
-/*! @} */
 #endif /* FSL_FEATURE_MCX_SPC_HAS_SRAMRETLDO_REG */
+/*! @} */
 
 /*!
  * @name Low Power Request configuration
@@ -1439,9 +1451,9 @@ static inline uint32_t SPC_GetLowPowerModeEnabledAnalogModules(SPC_Type *base)
  * @param base SPC peripheral base address.
  * @return Voltage Detect Status Flags. See @ref _spc_voltage_detect_flags for details.
  */
-static inline uint8_t SPC_GetVoltageDetectStatusFlag(SPC_Type *base)
+static inline uint32_t SPC_GetVoltageDetectStatusFlag(SPC_Type *base)
 {
-    return (uint8_t)(base->VD_STAT);
+    return (uint32_t)(base->VD_STAT);
 }
 
 /*!
@@ -1836,7 +1848,9 @@ void SPC_SetExternalVoltageDomainsConfig(SPC_Type *base, uint8_t lowPowerIsoMask
  */
 static inline uint8_t SPC_GetExternalDomainsStatus(SPC_Type *base)
 {
-    return (uint8_t)(base->EVD_CFG >> SPC_EVD_CFG_REG_EVDSTAT_SHIFT);
+    uint32_t tmp32 = (base->EVD_CFG >> SPC_EVD_CFG_REG_EVDSTAT_SHIFT);
+    assert(tmp32 <= UINT8_MAX);
+    return (uint8_t)(tmp32);
 }
 
 /*! @} */
