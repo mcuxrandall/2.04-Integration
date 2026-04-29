@@ -158,7 +158,7 @@ int main(void)
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
-    p3t1755_handle_t p3t1755Handle;
+    //p3t1755_handle_t p3t1755Handle;
 
     PRINTF("HELLO UART\r\n");
 
@@ -201,8 +201,8 @@ int main(void)
     char    fahrenheit_str[16];
     double  temperature = 0.0;
 
-	adc_init();			// handles all ADC logic
-	motor_pwm_init();	// handles motor PWM logic
+	//adc_init();			// handles all ADC logic
+	//motor_pwm_init();	// handles motor PWM logic
     if (initialize_PWM1() == kStatus_Fail) return 1; // handles RGB P
 
     // 1 turns the motor on, 0 turns it off
@@ -234,11 +234,12 @@ int main(void)
 		if (DutyCyVal_G > 100) DutyCyVal_G = 0;
 		if (DutyCyVal_B > 100) DutyCyVal_B = 0;
 
+		/*
 		if (btn0_state) {
 			DutyCyVal_R = 0;
 			DutyCyVal_G = 0;
 			DutyCyVal_B = 0;
-		}
+		}*/
 
 		// Write LED = inverted button (so LED ON when button pressed)
 		GPIO_PinWrite(LED0_head, LED0_PIN, sw0_state);
@@ -249,16 +250,16 @@ int main(void)
 		output_RGB_val(DutyCyVal_R, DutyCyVal_G, DutyCyVal_B);
 
 		// Motor
-		raw = adc_read_pot();					// raw ADC data
-		speed = raw * 100 / 4095;				// raw data turned into percentage (CTIMER takes percentage 0-100)
+		//raw = adc_read_pot();					// raw ADC data
+		//speed = raw * 100 / 4095;				// raw data turned into percentage (CTIMER takes percentage 0-100)
 		/* speed clamping to not exceed 4095 (100%) */
-		if(speed > 100){
-			speed = 100;
-		}
+		//if(speed > 100){
+			//speed = 100;
+		//}
 
 		/* Prints data to terminal */
-		PRINTF("\rSTDBY(sw2): %1u | Dir(Sw0): %1u | RAW: %5u | SPEED: %3u%%   ",
-				sw2_state, sw0_state, raw, speed );
+		//PRINTF("\rSTDBY(sw2): %1u | Dir(Sw0): %1u | RAW: %5u | SPEED: %3u%%   ",
+		//		sw2_state, sw0_state, raw, speed );
 
 
 		/* This is what sends the PWM through the PWM pin */

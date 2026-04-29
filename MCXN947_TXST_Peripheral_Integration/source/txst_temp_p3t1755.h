@@ -30,6 +30,7 @@
 #define CCC_SETDASA 0x87
 
 
+
 /*******************************************************************************
  * Functions
  ******************************************************************************/
@@ -41,5 +42,6 @@ status_t I3C_ReadSensor(uint8_t deviceAddress, uint32_t regAddress, uint8_t *reg
 status_t p3t1755_set_dynamic_address(void);
 void init_i3c_temp(void);
 
+extern p3t1755_handle_t p3t1755Handle;
 
 #endif

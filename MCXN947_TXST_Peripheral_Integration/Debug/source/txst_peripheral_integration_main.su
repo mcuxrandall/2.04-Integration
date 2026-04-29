@@ -4,4 +4,4 @@
 ../source/txst_motor.h:26:6:motor_pwm_init	40	static
 ../source/txst_peripheral_integration_main.c:90:13:format_temperature	48	static
 ../source/txst_peripheral_integration_main.c:124:13:format_fahrenheit	56	static
-../source/txst_peripheral_integration_main.c:153:5:main	104	static
+../source/txst_peripheral_integration_main.c:153:5:main	80	static

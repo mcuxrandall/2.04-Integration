@@ -1,7 +1,7 @@
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
-../board/clock_config.c:53:6:BOARD_InitBootClocks	8	static
-../board/clock_config.c:90:6:BOARD_BootClockFRO12M	8	static
-../board/clock_config.c:137:6:BOARD_BootClockFROHF48M	8	static
-../board/clock_config.c:191:6:BOARD_BootClockFROHF144M	8	static
-../board/clock_config.c:250:6:BOARD_BootClockPLL150M	40	static
-../board/clock_config.c:322:6:BOARD_BootClockPLL100M	40	static
+../board/clock_config.c:47:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:83:6:BOARD_BootClockFRO12M	24	static
+../board/clock_config.c:151:6:BOARD_BootClockFROHF48M	24	static
+../board/clock_config.c:225:6:BOARD_BootClockFROHF144M	24	static
+../board/clock_config.c:304:6:BOARD_BootClockPLL150M	48	static
+../board/clock_config.c:397:6:BOARD_BootClockPLL100M	48	static

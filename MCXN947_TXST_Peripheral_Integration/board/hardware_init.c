@@ -24,6 +24,7 @@ void BOARD_InitHardware(void)
     /* attach FRO 12M to FLEXCOMM2 */
     CLOCK_SetClkDiv(kCLOCK_DivFlexcom2Clk, 1u);
     CLOCK_AttachClk(kFRO12M_to_FLEXCOMM2);
+    CLOCK_EnableClock(kCLOCK_LPFlexComm2);
 
     /* Enable DMA clock. */
     CLOCK_EnableClock(kCLOCK_Dma0);
@@ -32,6 +33,7 @@ void BOARD_InitHardware(void)
     //BOARD_InitPins();
     BOARD_InitHardware();
     BOARD_BootClockFRO12M();
+    BOARD_InitDebugConsole();
     /* Initialize the systick module. */
     SysTick_Config(12000000UL);
 //    LED_RED_INIT(LOGIC_LED_OFF);

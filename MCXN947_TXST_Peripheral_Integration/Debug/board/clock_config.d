@@ -93,7 +93,8 @@ board/clock_config.o board/clock_config.d: ../board/clock_config.c \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_reset.h \
  ../board/clock_config.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_spc.h
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/device/fsl_device_registers.h:
@@ -189,3 +190,4 @@ board/clock_config.o board/clock_config.d: ../board/clock_config.c \
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_reset.h:
 ../board/clock_config.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_spc.h:
