@@ -28,8 +28,8 @@
 // temp
 #define EXAMPLE_MASTER             I3C1
 #define I3C_MASTER_CLOCK_FREQUENCY CLOCK_GetI3cClkFreq(1)
-#define SENSOR_SLAVE_ADDR          0x4FU
-//#define SENSOR_SLAVE_ADDR          0x48U // internal
+//#define SENSOR_SLAVE_ADDR          0x4FU
+#define SENSOR_SLAVE_ADDR          0x48U // internal
 #define EXAMPLE_I2C_BAUDRATE 400000U
 #define EXAMPLE_I3C_OD_BAUDRATE 1500000U
 #define EXAMPLE_I3C_PP_BAUDRATE 4000000U

@@ -302,7 +302,7 @@ int main(void)
             oled_refresh();
 
             /* Brief pause before next reading */
-            SDK_DelayAtLeastUs(500000U, CLOCK_GetCoreSysClkFreq());
+            //SDK_DelayAtLeastUs(500000U, CLOCK_GetCoreSysClkFreq());
         }
     }
 }
