@@ -1,5 +1,7 @@
 source/txst_oled.o source/txst_oled.d: ../source/txst_oled.c \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/utilities/debug_console/fsl_debug_console.h \
+ ../source/txst_oled.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/board.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/clock_config.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/device/fsl_device_registers.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/device/MCXN947_cm33_core0.h \
@@ -93,11 +95,15 @@ source/txst_oled.o source/txst_oled.d: ../source/txst_oled.c \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_reset.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/utilities/debug_console/fsl_debug_console.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/serial_manager/fsl_component_serial_manager.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/serial_manager/fsl_component_serial_port_uart.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/uart/fsl_adapter_uart.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpi2c.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpflexcomm.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/app.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/pin_mux.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpi2c_cmsis.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/CMSIS_driver/Include/Driver_I2C.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/CMSIS_driver/Include/Driver_Common.h \
@@ -107,14 +113,10 @@ source/txst_oled.o source/txst_oled.d: ../source/txst_oled.c \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpi2c_edma.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma_core.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma_soc.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/app.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/pin_mux.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/board.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/clock_config.h \
- /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h \
- ../source/txst_oled.h
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/utilities/debug_console/fsl_debug_console.h:
+ /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma_soc.h
+../source/txst_oled.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/board.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/clock_config.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/device/fsl_device_registers.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/device/MCXN947_cm33_core0.h:
@@ -208,11 +210,15 @@ source/txst_oled.o source/txst_oled.d: ../source/txst_oled.c \
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_common.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_reset.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/utilities/debug_console/fsl_debug_console.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/serial_manager/fsl_component_serial_manager.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/serial_manager/fsl_component_serial_port_uart.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/component/uart/fsl_adapter_uart.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpi2c.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpflexcomm.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/app.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/pin_mux.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpi2c_cmsis.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/CMSIS_driver/Include/Driver_I2C.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/CMSIS_driver/Include/Driver_Common.h:
@@ -223,9 +229,3 @@ source/txst_oled.o source/txst_oled.d: ../source/txst_oled.c \
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma_core.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_edma_soc.h:
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/app.h:
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/pin_mux.h:
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/board.h:
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/board/clock_config.h:
-/Users/andrew/Documents/GitHub/1.04-Integration/MCXN947_TXST_Peripheral_Integration/drivers/fsl_gpio.h:
-../source/txst_oled.h:
