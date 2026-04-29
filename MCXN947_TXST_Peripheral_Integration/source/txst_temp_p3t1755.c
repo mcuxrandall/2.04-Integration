@@ -188,7 +188,18 @@ status_t p3t1755_set_dynamic_address(void)
 /*!
  * @brief Main function
  */
-void read_i3c_temp(void) {
+void init_i3c_temp(void) {
+    /* I3C1 clock */
+    CLOCK_AttachClk(kFRO_HF_to_I3C1FCLK);
+    CLOCK_SetClkDiv(kCLOCK_DivI3c1FClk, 2U);
+    CLOCK_EnableClock(kCLOCK_I3c1);
+
+    /* FLEXCOMM2 clock for OLED - must match working project exactly */
+    CLOCK_SetClkDiv(kCLOCK_DivFlexcom2Clk, 1U);
+    CLOCK_AttachClk(kFRO12M_to_FLEXCOMM2);
+    CLOCK_EnableClock(kCLOCK_LPFlexComm2);  // add this - was missing!
+    CLOCK_EnableClock(EXAMPLE_LPI2C_DMA_CLOCK);
+
     status_t result = kStatus_Success;
     i3c_master_config_t masterConfig;
     p3t1755_config_t p3t1755Config;
