@@ -1,0 +1,6 @@
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+../source/txst_temp_p3t1755.c:50:13:i3c_master_callback	24	static
+../source/txst_temp_p3t1755.c:60:10:I3C_WriteSensor	64	static
+../source/txst_temp_p3t1755.c:101:10:I3C_ReadSensor	64	static
+../source/txst_temp_p3t1755.c:142:10:p3t1755_set_dynamic_address	48	static
+../source/txst_temp_p3t1755.c:191:6:init_i3c_temp	56	static
