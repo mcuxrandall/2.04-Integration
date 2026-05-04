@@ -17,7 +17,7 @@
  * Display geometry — exposed so callers can do centering math if needed
  ******************************************************************************/
 #define OLED_WIDTH    (128U)
-#define OLED_HEIGHT   (64U)
+#define OLED_HEIGHT   (32U)
 #define OLED_PAGES    (OLED_HEIGHT / 8U)   /* 8 pages of 8 pixels each */
 
 /*******************************************************************************

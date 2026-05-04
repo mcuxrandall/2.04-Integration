@@ -142,24 +142,23 @@ static const uint8_t font5x7_data[] = {
  * SSD1306 init command table
  ******************************************************************************/
 static const uint8_t ssd1306_init_cmds[] = {
-    0xAE,              /* Display OFF                          */
-    0xA8, OLED_HEIGHT - 1, /* Set MUX Ratio                  */
-    0xD3, 0x00,        /* Set Display Offset = 0              */
-    0x40,              /* Set Display Start Line = 0          */
-    0x8D, 0x14,        /* Charge Pump ON                      */
-    0xA1,              /* Segment Remap (col 127 -> SEG0)     */
-    0xC8,              /* COM Output: remapped (top-to-bottom)*/
-    0xDA, 0x12,        /* COM Pins Hardware Configuration     */
-    0x81, 0xCF,        /* Contrast = 0xCF                     */
-    0xD9, 0xF1,        /* Pre-charge Period                   */
-    0xDB, 0x40,        /* VCOMH Deselect Level                */
-    0xA4,              /* Entire Display On (use RAM content) */
-    0xA6,              /* Normal (non-inverted) Display       */
-    0x2E,              /* Deactivate Scroll                   */
-    0x20, 0x00,        /* Memory Addressing Mode = Horizontal */
-    0xAF               /* Display ON                          */
+    0xAE,                   /* Display OFF                          */
+    0xA8, OLED_HEIGHT - 1,  /* Set MUX Ratio (0x1F for 32px)       */
+    0xD3, 0x00,             /* Set Display Offset = 0              */
+    0x60,                   /* Set Display Start Line = 0          */
+    0x8D, 0x14,             /* Charge Pump ON                      */
+    0xA1,                   /* Segment Remap (col 127 -> SEG0)     */
+    0xC8,                   /* COM Output: remapped (top-to-bottom)*/
+    0xDA, 0x02,             /* COM Pins Hardware Configuration     */  // <-- changed
+    0x81, 0xCF,             /* Contrast = 0xCF                     */
+    0xD9, 0xF1,             /* Pre-charge Period                   */
+    0xDB, 0x40,             /* VCOMH Deselect Level                */
+    0xA4,                   /* Entire Display On (use RAM content) */
+    0xA6,                   /* Normal (non-inverted) Display       */
+    0x2E,                   /* Deactivate Scroll                   */
+    0x20, 0x00,             /* Memory Addressing Mode = Horizontal */
+    0xAF                    /* Display ON                          */
 };
-
 /*******************************************************************************
  * Private variables
  ******************************************************************************/
