@@ -1,5 +1,6 @@
 board/hardware_init.o board/hardware_init.d: ../board/hardware_init.c \
- ../board/pin_mux.h ../board/peripherals.h \
+ ../board/pin_mux.h ../board/peripherals.h ../board/board.h \
+ ../board/clock_config.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_common.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\device/fsl_device_registers.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\device/MCXN947_cm33_core0.h \
@@ -93,13 +94,11 @@ board/hardware_init.o board/hardware_init.d: ../board/hardware_init.c \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_clock.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_common.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_reset.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_spc.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_vref.h \
- ../board/board.h ../board/clock_config.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h
 ../board/pin_mux.h:
 ../board/peripherals.h:
+../board/board.h:
+../board/clock_config.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_common.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\device/fsl_device_registers.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\device/MCXN947_cm33_core0.h:
@@ -193,9 +192,4 @@ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Periphera
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_clock.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_common.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_reset.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_spc.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_vref.h:
-../board/board.h:
-../board/clock_config.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:

@@ -10,7 +10,6 @@ C_SRCS += \
 ../source/txst_peripheral_integration_main.c \
 ../source/txst_rgb.c \
 ../source/txst_sd_card.c \
-../source/txst_temp_lm75b.c \
 ../source/txst_temp_p3t1755.c 
 
 C_DEPS += \
@@ -20,7 +19,6 @@ C_DEPS += \
 ./source/txst_peripheral_integration_main.d \
 ./source/txst_rgb.d \
 ./source/txst_sd_card.d \
-./source/txst_temp_lm75b.d \
 ./source/txst_temp_p3t1755.d 
 
 OBJS += \
@@ -30,7 +28,6 @@ OBJS += \
 ./source/txst_peripheral_integration_main.o \
 ./source/txst_rgb.o \
 ./source/txst_sd_card.o \
-./source/txst_temp_lm75b.o \
 ./source/txst_temp_p3t1755.o 
 
 
@@ -46,7 +43,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/txst_adc.d ./source/txst_adc.o ./source/txst_imu.d ./source/txst_imu.o ./source/txst_oled.d ./source/txst_oled.o ./source/txst_peripheral_integration_main.d ./source/txst_peripheral_integration_main.o ./source/txst_rgb.d ./source/txst_rgb.o ./source/txst_sd_card.d ./source/txst_sd_card.o ./source/txst_temp_lm75b.d ./source/txst_temp_lm75b.o ./source/txst_temp_p3t1755.d ./source/txst_temp_p3t1755.o
+	-$(RM) ./source/txst_adc.d ./source/txst_adc.o ./source/txst_imu.d ./source/txst_imu.o ./source/txst_oled.d ./source/txst_oled.o ./source/txst_peripheral_integration_main.d ./source/txst_peripheral_integration_main.o ./source/txst_rgb.d ./source/txst_rgb.o ./source/txst_sd_card.d ./source/txst_sd_card.o ./source/txst_temp_p3t1755.d ./source/txst_temp_p3t1755.o
 
 .PHONY: clean-source
 

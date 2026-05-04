@@ -14,18 +14,31 @@
 /*${function:start}*/
 void BOARD_InitHardware(void)
 {
-    BOARD_InitPins();
-    BOARD_BootClockFRO12M();
+    CLOCK_EnableClock(kCLOCK_Gpio0);
 
-    /* Debug UART */
-    BOARD_InitDebugConsole();
+    // following five clock lines thought to be required for OLED
+    /* attach FRO 12M to FLEXCOMM4 (debug console) */
+    CLOCK_SetClkDiv(kCLOCK_DivFlexcom4Clk, 1u);
+    CLOCK_AttachClk(BOARD_DEBUG_UART_CLK_ATTACH);
 
-    /* OLED I2C clock MUST be valid */
+    /* attach FRO 12M to FLEXCOMM2 */
     CLOCK_SetClkDiv(kCLOCK_DivFlexcom2Clk, 1u);
     CLOCK_AttachClk(kFRO12M_to_FLEXCOMM2);
     CLOCK_EnableClock(kCLOCK_LPFlexComm2);
 
-    /* DMA for OLED */
+    /* Enable DMA clock. */
     CLOCK_EnableClock(kCLOCK_Dma0);
+
+    // initialize pins
+    //BOARD_InitPins();
+    BOARD_InitHardware();
+    BOARD_BootClockFRO12M();
+    BOARD_InitDebugConsole();
+    /* Initialize the systick module. */
+    SysTick_Config(12000000UL);
+//    LED_RED_INIT(LOGIC_LED_OFF);
+//    LED_BLUE_INIT(LOGIC_LED_OFF);
+//    LED_GREEN_INIT(LOGIC_LED_OFF);
+
 }
 /*${function:end}*/

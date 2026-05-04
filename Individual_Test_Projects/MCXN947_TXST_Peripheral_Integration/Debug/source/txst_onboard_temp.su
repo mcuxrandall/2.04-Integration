@@ -1,0 +1,5 @@
+../source/txst_onboard_temp.c:26:13:i3c_master_callback	24	static
+../source/txst_onboard_temp.c:36:17:I3C_WriteSensor	64	static
+../source/txst_onboard_temp.c:77:17:I3C_ReadSensor	64	static
+../source/txst_onboard_temp.c:118:17:p3t1755_set_dynamic_address	48	static
+../source/txst_onboard_temp.c:167:13:init_onbaord_temp	56	static

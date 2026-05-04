@@ -1,0 +1,2 @@
+C:\Users\Stephen\Documents\MCUXpressoIDE_25.6.136\workspace_2026_3\MCXN947_TXST_Peripheral_Integration\drivers/fsl_ctimer.h:517:20:CTIMER_StartTimer	16	static
+../source/txst_motor.c:25:6:motor_pwm_init	40	static

@@ -748,7 +748,7 @@ void BOARD_InitPins(void)
     GPIO_PinInit(BOARD_INITPINS_Button_0_GPIO, BOARD_INITPINS_Button_0_PIN, &Button_0_config);
 
     const port_pin_config_t port0_10_pinB12_config = {/* Internal pull-up/down resistor is disabled */
-                                                      .pullSelect = kPORT_PullDisable,
+                                                      .pullSelect = kPORT_PullUp,
                                                       /* Low internal pull resistor value is selected. */
                                                       .pullValueSelect = kPORT_LowPullResistor,
                                                       /* Fast slew rate is configured */
@@ -791,7 +791,7 @@ void BOARD_InitPins(void)
                       | PORT_PCR_IBE(PCR_IBE_ibe1));
 
     const port_pin_config_t DEBUG_SWD_SWO = {/* Internal pull-up/down resistor is disabled */
-                                             .pullSelect = kPORT_PullDisable,
+                                             .pullSelect = kPORT_PullUp,
                                              /* Low internal pull resistor value is selected. */
                                              .pullValueSelect = kPORT_LowPullResistor,
                                              /* Fast slew rate is configured */
@@ -810,6 +810,7 @@ void BOARD_InitPins(void)
                                              .invertInput = kPORT_InputNormal,
                                              /* Pin Control Register fields [15:0] are not locked */
                                              .lockRegister = kPORT_UnlockRegister};
+
     /* PORT0_2 (pin B16) is configured as SWO */
     PORT_SetPinConfig(BOARD_INITPINS_DEBUG_SWD_SWO_PORT, BOARD_INITPINS_DEBUG_SWD_SWO_PIN, &DEBUG_SWD_SWO);
 

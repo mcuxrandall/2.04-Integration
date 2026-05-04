@@ -96,9 +96,6 @@ source/txst_sd_card.o source/txst_sd_card.d: ../source/txst_sd_card.c \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_reset.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/peripherals.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_spc.h \
- C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_vref.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/pin_mux.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/clock_config.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\utilities\debug_console/fsl_debug_console.h \
@@ -202,9 +199,6 @@ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Periphera
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_reset.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_gpio.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/peripherals.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_spc.h:
-C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_vref.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/pin_mux.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/clock_config.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\utilities\debug_console/fsl_debug_console.h:

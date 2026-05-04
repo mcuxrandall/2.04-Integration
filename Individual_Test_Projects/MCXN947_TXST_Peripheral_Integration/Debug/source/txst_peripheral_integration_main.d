@@ -106,7 +106,16 @@ source/txst_peripheral_integration_main.o \
  ../source/txst_temp_p3t1755.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_i3c.h \
  C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_p3t1755.h \
- ../source/txst_oled.h
+ ../source/txst_oled.h \
+ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/peripherals.h \
+ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/pin_mux.h \
+ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/clock_config.h \
+ ../source/txst_pinmap_defines.h ../source/txst_adc.h \
+ ../source/txst_imu.h ../source/txst_motor.h \
+ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_ctimer.h \
+ ../source/txst_rgb.h \
+ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h \
+ ../source/txst_sd_card.h
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/board.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/clock_config.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_common.h:
@@ -213,3 +222,14 @@ C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Periphera
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_i3c.h:
 C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_p3t1755.h:
 ../source/txst_oled.h:
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/peripherals.h:
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/pin_mux.h:
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\board/clock_config.h:
+../source/txst_pinmap_defines.h:
+../source/txst_adc.h:
+../source/txst_imu.h:
+../source/txst_motor.h:
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_ctimer.h:
+../source/txst_rgb.h:
+C:\Users\sport\Documents\MCUXpressoIDE_25.6.136\workspace\MCXN947_TXST_Peripheral_Integration\drivers/fsl_pwm.h:
+../source/txst_sd_card.h:

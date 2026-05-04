@@ -20,20 +20,17 @@
 /*******************************************************************************
  * Private definitions
  ******************************************************************************/
-/* Provides the LPI2C2 clock frequency to the CMSIS driver */
 uint32_t LPI2C2_GetFreq(void)
 {
     return CLOCK_GetLPFlexCommClkFreq(2U);
 }
 
 #define OLED_I2C_ADDRESS           (0x3CU)
-#define OLED_BUFFER_SIZE           (OLED_WIDTH * OLED_PAGES)    /* 1024 bytes */
+#define OLED_BUFFER_SIZE           (OLED_WIDTH * OLED_PAGES)    /* 512 bytes — 128x32 panel */
 
-/* Control byte modes for SSD1306 */
-#define SSD1306_COMMAND_MODE       (0x00U)  /* Co=0, D/C#=0 */
-#define SSD1306_DATA_MODE          (0x40U)  /* Co=0, D/C#=1 */
+#define SSD1306_COMMAND_MODE       (0x00U)
+#define SSD1306_DATA_MODE          (0x40U)
 
-/* Timeout: ~100 ms worth of loop iterations at the core clock */
 #define I2C_TIMEOUT_TICKS          (SystemCoreClock / 10U)
 
 /*******************************************************************************
@@ -68,7 +65,7 @@ static const uint8_t font5x7_data[] = {
     0x26, 0x49, 0x49, 0x49, 0x3E, // 9
     0x00, 0x36, 0x36, 0x00, 0x00, // :
     0x00, 0x56, 0x36, 0x00, 0x00, // ;
-    0x00, 0x08, 0x14, 0x22, 0x41, // <
+    0x00, 0x08, 0x14, 0x22, 0x41, //
     0x14, 0x14, 0x14, 0x14, 0x14, // =
     0x41, 0x22, 0x14, 0x08, 0x00, // >
     0x02, 0x01, 0x51, 0x09, 0x06, // ?
@@ -142,60 +139,33 @@ static const uint8_t font5x7_data[] = {
  * SSD1306 init command table
  ******************************************************************************/
 static const uint8_t ssd1306_init_cmds[] = {
-    0xAE,              /* Display OFF                          */
-    0xA8, OLED_HEIGHT - 1, /* Set MUX Ratio                  */
-    0xD3, 0x00,        /* Set Display Offset = 0              */
-    0x40,              /* Set Display Start Line = 0          */
-    0x8D, 0x14,        /* Charge Pump ON                      */
-    0xA1,              /* Segment Remap (col 127 -> SEG0)     */
-    0xC8,              /* COM Output: remapped (top-to-bottom)*/
-    0xDA, 0x12,        /* COM Pins Hardware Configuration     */
-    0x81, 0xCF,        /* Contrast = 0xCF                     */
-    0xD9, 0xF1,        /* Pre-charge Period                   */
-    0xDB, 0x40,        /* VCOMH Deselect Level                */
-    0xA4,              /* Entire Display On (use RAM content) */
-    0xA6,              /* Normal (non-inverted) Display       */
-    0x2E,              /* Deactivate Scroll                   */
-    0x20, 0x00,        /* Memory Addressing Mode = Horizontal */
-    0xAF               /* Display ON                          */
+    0xAE,                   /* Display OFF                          */
+    0xA8, OLED_HEIGHT - 1,  /* Set MUX Ratio (0x1F for 32px)       */
+    0xD3, 0x00,             /* Set Display Offset = 0              */
+    0x60,                   /* Set Display Start Line = 32         */
+    0x8D, 0x14,             /* Charge Pump ON                      */
+    0xA1,                   /* Segment Remap (col 127 -> SEG0)     */
+    0xC8,                   /* COM Output: remapped                */
+    0xDA, 0x02,             /* COM Pins Hardware Configuration     */
+    0x81, 0xCF,             /* Contrast = 0xCF                     */
+    0xD9, 0xF1,             /* Pre-charge Period                   */
+    0xDB, 0x40,             /* VCOMH Deselect Level                */
+    0xA5,                   /* Entire Display ON (ignore RAM)      */
+    0xA6,                   /* Normal (non-inverted) Display       */
+    0x2E,                   /* Deactivate Scroll                   */
+    0x20, 0x00,             /* Memory Addressing Mode = Horizontal */
+    0xAF                    /* Display ON                          */
 };
 
 /*******************************************************************************
  * Private variables
  ******************************************************************************/
-
-/*
- * Zero-copy tx buffer:
- *   g_tx_frame[0]         = SSD1306_DATA_MODE (set once, never changes)
- *   g_tx_frame[1..1024]   = frame pixel data
- */
 AT_NONCACHEABLE_SECTION(static uint8_t g_tx_frame[OLED_BUFFER_SIZE + 1U]);
-
-/* Convenience alias — draw functions write here */
 static uint8_t * const g_oled_frame_buffer = &g_tx_frame[1];
-
-/* Receive buffer (reserved for future read operations) */
 AT_NONCACHEABLE_SECTION(static uint8_t g_master_rxBuff[256U]);
-
-/* Scratch buffer for single-command writes (control byte + command) */
 AT_NONCACHEABLE_SECTION(static uint8_t g_cmd_buf[2U]);
-
-/*
- * Window-command buffer for Horizontal Addressing Mode.
- *   [0] SSD1306_COMMAND_MODE
- *   [1] 0x21  Set Column Address
- *   [2] col_start
- *   [3] col_end
- *   [4] 0x22  Set Page Address
- *   [5] page_start
- *   [6] page_end
- */
 AT_NONCACHEABLE_SECTION(static uint8_t g_win_cmd[7U]);
-
-/* Transfer completion flag, set by CMSIS callback */
 static volatile bool g_MasterCompletionFlag = false;
-
-/* Dirty-page bitmask: bit N set = page N needs retransmitting */
 static uint8_t g_dirty_pages = 0U;
 
 /*******************************************************************************
@@ -226,7 +196,6 @@ static void lpi2c_master_callback(uint32_t event)
 static bool i2c_wait_for_transfer(void)
 {
     uint32_t ticks = I2C_TIMEOUT_TICKS;
-
     while (!g_MasterCompletionFlag)
     {
         if (--ticks == 0U)
@@ -236,7 +205,6 @@ static bool i2c_wait_for_transfer(void)
             return false;
         }
     }
-
     g_MasterCompletionFlag = false;
     return true;
 }
@@ -245,7 +213,6 @@ static bool ssd1306_write_command(uint8_t command)
 {
     g_cmd_buf[0] = SSD1306_COMMAND_MODE;
     g_cmd_buf[1] = command;
-
     EXAMPLE_I2C_MASTER.MasterTransmit(OLED_I2C_ADDRESS, g_cmd_buf, 2U, false);
     return i2c_wait_for_transfer();
 }
@@ -276,11 +243,9 @@ static void ssd1306_draw_pixel_internal(uint8_t x, uint8_t y)
     {
         return;
     }
-
     uint8_t  page       = y / 8U;
     uint16_t byte_index = (uint16_t)x + (uint16_t)page * OLED_WIDTH;
     uint8_t  bit_index  = y % 8U;
-
     g_oled_frame_buffer[byte_index] |= (uint8_t)(1U << bit_index);
     g_dirty_pages |= (uint8_t)(1U << page);
 }
@@ -291,10 +256,8 @@ static void ssd1306_draw_char_internal(uint8_t x, uint8_t y, char c)
     {
         return;
     }
-
     uint8_t char_index       = (uint8_t)(c - ' ');
     const uint8_t *char_data = &font5x7_data[char_index * 5U];
-
     for (uint8_t col = 0U; col < 5U; col++)
     {
         uint8_t col_bits = char_data[col];
@@ -314,7 +277,6 @@ static void ssd1306_draw_text_internal(uint8_t x, uint8_t y, const char *text)
     {
         ssd1306_draw_char_internal(x, y, *text);
         x = (uint8_t)(x + 6U);
-
         if ((x + 5U) >= OLED_WIDTH)
         {
             x = 0U;
@@ -332,10 +294,10 @@ static bool ssd1306_refresh_display(void)
     }
 
     g_win_cmd[0] = SSD1306_COMMAND_MODE;
-    g_win_cmd[1] = 0x21U; /* Set Column Address */
-    g_win_cmd[2] = 0x00U; /* col start = 0      */
-    g_win_cmd[3] = 0x7FU; /* col end   = 127    */
-    g_win_cmd[4] = 0x22U; /* Set Page Address   */
+    g_win_cmd[1] = 0x21U;
+    g_win_cmd[2] = 0x00U;
+    g_win_cmd[3] = 0x7FU;
+    g_win_cmd[4] = 0x22U;
 
     uint8_t page = 0U;
 
@@ -347,7 +309,6 @@ static bool ssd1306_refresh_display(void)
             continue;
         }
 
-        /* Find the end of this contiguous dirty run */
         uint8_t first_page = page;
         while (page < OLED_PAGES && (g_dirty_pages & (uint8_t)(1U << page)))
         {
@@ -355,7 +316,6 @@ static bool ssd1306_refresh_display(void)
         }
         uint8_t last_page = page - 1U;
 
-        /* Send window command: col 0-127, page first..last */
         g_win_cmd[5] = first_page;
         g_win_cmd[6] = last_page;
 
@@ -368,7 +328,6 @@ static bool ssd1306_refresh_display(void)
             return false;
         }
 
-        /* DMA pixel data directly from g_tx_frame */
         uint16_t  pixel_offset = (uint16_t)first_page * OLED_WIDTH;
         uint16_t  pixel_count  = (uint16_t)(last_page - first_page + 1U) * OLED_WIDTH;
         uint8_t  *tx_ptr;
@@ -377,7 +336,7 @@ static bool ssd1306_refresh_display(void)
 
         if (first_page == 0U)
         {
-            tx_ptr = &g_tx_frame[0]; /* permanent DATA_MODE byte */
+            tx_ptr = &g_tx_frame[0];
         }
         else
         {
@@ -408,16 +367,13 @@ static bool ssd1306_refresh_display(void)
 }
 
 /*******************************************************************************
- * Public API — these are the only functions visible outside this file
+ * Public API
  ******************************************************************************/
 
-/*!
- * @brief Initializes the I2C peripheral and the SSD1306 display.
- */
 bool oled_init(void)
 {
-	 PRINTF("FLEXCOMM2 clock: %u\r\n", CLOCK_GetLPFlexCommClkFreq(2u));  // add this
-	    // ... rest of function
+    PRINTF("FLEXCOMM2 clock: %u\r\n", CLOCK_GetLPFlexCommClkFreq(2u));
+
 #if (defined(FSL_FEATURE_SOC_DMAMUX_COUNT) && FSL_FEATURE_SOC_DMAMUX_COUNT)
     DMAMUX_Init(EXAMPLE_LPI2C_DMAMUX_BASEADDR);
 #endif
@@ -429,7 +385,6 @@ bool oled_init(void)
 #endif
     EDMA_Init(EXAMPLE_LPI2C_DMA_BASEADDR, &edmaConfig);
 
-    /* Enable LP_FLEXCOMM2 interrupt for CMSIS interrupt-mode LPI2C driver */
     NVIC_SetPriority(LP_FLEXCOMM2_IRQn, 3U);
     EnableIRQ(LP_FLEXCOMM2_IRQn);
 
@@ -437,7 +392,8 @@ bool oled_init(void)
     EXAMPLE_I2C_MASTER.PowerControl(ARM_POWER_FULL);
     EXAMPLE_I2C_MASTER.Control(ARM_I2C_BUS_SPEED, ARM_I2C_BUS_SPEED_FAST);
 
-    /* Fix the zero-copy control byte permanently */
+    /* Zero entire buffer and set DATA_MODE byte */
+    memset(g_tx_frame, 0U, sizeof(g_tx_frame));
     g_tx_frame[0] = SSD1306_DATA_MODE;
 
     PRINTF("Scanning I2C bus...\r\n");
@@ -446,51 +402,45 @@ bool oled_init(void)
         uint8_t dummy = 0;
         int32_t result = EXAMPLE_I2C_MASTER.MasterTransmit(addr, &dummy, 1U, false);
         uint32_t ticks = 1000000U;
-        while (ticks--);  /* simple delay instead of callback wait */
+        while (ticks--);
         if (result == ARM_DRIVER_OK)
         {
             PRINTF("Found device at 0x%02X\r\n", addr);
         }
     }
     PRINTF("Scan done.\r\n");
-    return ssd1306_init_display();
+
+    /* Init display — 0xA5 in cmd table forces all pixels ON during init */
+    bool result = ssd1306_init_display();
+
+    /* Push a blank frame then switch back to RAM mode */
+    ssd1306_clear_display();
+    ssd1306_refresh_display();
+    ssd1306_write_command(0xA4);   /* back to normal RAM display mode */
+
+    return result;
 }
 
-/*!
- * @brief Clears the frame buffer and marks all pages dirty.
- */
 void oled_clear(void)
 {
     ssd1306_clear_display();
 }
 
-/*!
- * @brief Sets a single pixel in the frame buffer.
- */
 void oled_draw_pixel(uint8_t x, uint8_t y)
 {
     ssd1306_draw_pixel_internal(x, y);
 }
 
-/*!
- * @brief Draws a single ASCII character at (x, y).
- */
 void oled_draw_char(uint8_t x, uint8_t y, char c)
 {
     ssd1306_draw_char_internal(x, y, c);
 }
 
-/*!
- * @brief Draws a null-terminated string starting at (x, y).
- */
 void oled_draw_text(uint8_t x, uint8_t y, const char *text)
 {
     ssd1306_draw_text_internal(x, y, text);
 }
 
-/*!
- * @brief Transmits all dirty pages to the display.
- */
 bool oled_refresh(void)
 {
     return ssd1306_refresh_display();
