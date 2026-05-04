@@ -1,0 +1,4 @@
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/MCXN947_TXST_Peripheral_Integration/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/MCXN947_TXST_Peripheral_Integration/drivers/fsl_lpadc.h:1128:20:LPADC_DoSoftwareTrigger	16	static
+../source/txst_adc.c:30:6:adc_init	88	static
+../source/txst_adc.c:66:10:adc_read_pot	24	static

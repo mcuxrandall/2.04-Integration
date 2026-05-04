@@ -1,0 +1,8 @@
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/MCXN947_TXST_Peripheral_Integration/CMSIS/core_cm33.h:2555:22:__NVIC_SetPriority	16	static
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/MCXN947_TXST_Peripheral_Integration/CMSIS/core_cm33.h:3108:26:SysTick_Config	16	static
+../source/txst_imu.c:21:13:InitSysTick	8	static
+../source/txst_imu.c:30:6:SysTick_Handler	4	static
+../source/txst_imu.c:38:13:Delay_us	16	static
+../source/txst_imu.c:44:13:Delay_ms	16	static
+../source/txst_imu.c:201:14:LSM6DSO_WriteReg	56	static
+../source/txst_imu.c:55:5:main_IMU	112	static
