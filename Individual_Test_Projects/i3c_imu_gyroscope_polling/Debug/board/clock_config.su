@@ -1,4 +1,4 @@
-/Users/andrew/Documents/MCUXpressoIDE_25.6.136/workspace/IMU_WHOAMI/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_clock.h:1492:20:CLOCK_EnableClock	24	static
 ../board/clock_config.c:47:6:BOARD_InitBootClocks	8	static
 ../board/clock_config.c:84:6:BOARD_BootClockFRO12M	24	static
 ../board/clock_config.c:153:6:BOARD_BootClockFROHF48M	24	static

@@ -6,7 +6,7 @@
  * Generated linker script file for MCXN947
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on Mar 25, 2026, 5:20:49 PM
+ * MCUXpresso IDE v25.6 [Build 136] [2025-06-27] on May 4, 2026, 10:12:03 PM
  */
 
 INCLUDE "IMU_WHOAMI_Debug_library.ld"

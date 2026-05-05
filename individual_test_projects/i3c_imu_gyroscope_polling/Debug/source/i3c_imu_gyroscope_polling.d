@@ -1,5 +1,8 @@
-drivers/fsl_clock.o drivers/fsl_clock.d: ../drivers/fsl_clock.c \
- ../drivers/fsl_clock.h ../drivers/fsl_common.h \
+source/i3c_imu_gyroscope_polling.o source/i3c_imu_gyroscope_polling.d: \
+ ../source/i3c_imu_gyroscope_polling.c \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/pin_mux.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/clock_config.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/fsl_device_registers.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/MCXN947_cm33_core0.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_ADC.h \
@@ -88,9 +91,22 @@ drivers/fsl_clock.o drivers/fsl_clock.d: ../drivers/fsl_clock.c \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_VREF.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_WUU.h \
  /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_WWDT.h \
- ../drivers/fsl_common_arm.h ../drivers/fsl_reset.h
-../drivers/fsl_clock.h:
-../drivers/fsl_common.h:
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common_arm.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_clock.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_reset.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/board.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/clock_config.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_gpio.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/utilities/debug_console/fsl_debug_console.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/serial_manager/fsl_component_serial_manager.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/serial_manager/fsl_component_serial_port_uart.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/uart/fsl_adapter_uart.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_i3c.h \
+ /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_reset.h
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/pin_mux.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/clock_config.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/fsl_device_registers.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/MCXN947_cm33_core0.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_ADC.h:
@@ -179,5 +195,16 @@ drivers/fsl_clock.o drivers/fsl_clock.d: ../drivers/fsl_clock.c \
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_VREF.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_WUU.h:
 /Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/device/periph/PERI_WWDT.h:
-../drivers/fsl_common_arm.h:
-../drivers/fsl_reset.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common_arm.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_clock.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_common.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_reset.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/board.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/board/clock_config.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_gpio.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/utilities/debug_console/fsl_debug_console.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/serial_manager/fsl_component_serial_manager.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/serial_manager/fsl_component_serial_port_uart.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/component/uart/fsl_adapter_uart.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_i3c.h:
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/drivers/fsl_reset.h:

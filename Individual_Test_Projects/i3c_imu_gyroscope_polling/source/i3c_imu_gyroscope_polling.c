@@ -64,6 +64,37 @@ static void Delay_ms(uint32_t ms)
 /*******************************************************************************
  * Main
  ******************************************************************************/
+status_t LSM6DSO_WriteReg(uint8_t addr, uint8_t value, uint8_t slaveAddr, bool useI3C)
+{
+    i3c_master_transfer_t xfer = {0};
+
+    xfer.slaveAddress   = slaveAddr;
+    xfer.subaddress     = addr;
+    xfer.subaddressSize = 1;
+    xfer.direction      = kI3C_Write;
+    xfer.data           = &value;
+    xfer.dataSize       = 1;
+    xfer.busType        = useI3C ? kI3C_TypeI3CSdr : kI3C_TypeI2C;
+
+    return I3C_MasterTransferBlocking(EXAMPLE_MASTER, &xfer);
+}
+
+status_t LSM6DSO_ReadRegs(uint8_t addr, uint8_t *buf, uint8_t len,
+                          uint8_t slaveAddr, bool useI3C)
+{
+    i3c_master_transfer_t xfer = {0};
+
+    xfer.slaveAddress   = slaveAddr;
+    xfer.subaddress     = addr;
+    xfer.subaddressSize = 1;
+    xfer.direction      = kI3C_Read;
+    xfer.data           = buf;
+    xfer.dataSize       = len;
+    xfer.flags          = kI3C_TransferRepeatedStartFlag;
+    xfer.busType        = useI3C ? kI3C_TypeI3CSdr : kI3C_TypeI2C;
+
+    return I3C_MasterTransferBlocking(EXAMPLE_MASTER, &xfer);
+}
 int main(void)
 {
     i3c_master_config_t masterConfig;
@@ -95,7 +126,7 @@ int main(void)
     PRINTF("I3C master initialized\r\n");
 
     /* Sensor power‑up time */
-    Delay_ms(100);
+    //Delay_ms(100);
 
     /***************************************************************************
      * DAA
@@ -210,37 +241,7 @@ int main(void)
             //PRINTF(".\r\n");
         }
     }
-    status_t LSM6DSO_WriteReg(uint8_t addr, uint8_t value, uint8_t slaveAddr, bool useI3C)
-    {
-        i3c_master_transfer_t xfer = {0};
 
-        xfer.slaveAddress   = slaveAddr;
-        xfer.subaddress     = addr;
-        xfer.subaddressSize = 1;
-        xfer.direction      = kI3C_Write;
-        xfer.data           = &value;
-        xfer.dataSize       = 1;
-        xfer.busType        = useI3C ? kI3C_TypeI3CSdr : kI3C_TypeI2C;
-
-        return I3C_MasterTransferBlocking(EXAMPLE_MASTER, &xfer);
-    }
-
-    status_t LSM6DSO_ReadRegs(uint8_t addr, uint8_t *buf, uint8_t len,
-                              uint8_t slaveAddr, bool useI3C)
-    {
-        i3c_master_transfer_t xfer = {0};
-
-        xfer.slaveAddress   = slaveAddr;
-        xfer.subaddress     = addr;
-        xfer.subaddressSize = 1;
-        xfer.direction      = kI3C_Read;
-        xfer.data           = buf;
-        xfer.dataSize       = len;
-        xfer.flags          = kI3C_TransferRepeatedStartFlag;
-        xfer.busType        = useI3C ? kI3C_TypeI3CSdr : kI3C_TypeI2C;
-
-        return I3C_MasterTransferBlocking(EXAMPLE_MASTER, &xfer);
-    }
 
     // CTRL3_C: BDU=1, IF_INC=1
     LSM6DSO_WriteReg(0x12, 0x44, targetAddr, useI3C);

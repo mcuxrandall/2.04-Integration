@@ -1,0 +1,9 @@
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/CMSIS/core_cm33.h:2555:22:__NVIC_SetPriority	16	static
+/Users/andrew/Documents/GitHub/1.04-Integration/individual_test_projects/i3c_imu_gyroscope_polling/CMSIS/core_cm33.h:3108:26:SysTick_Config	16	static
+../source/i3c_imu_gyroscope_polling.c:33:13:InitSysTick	8	static
+../source/i3c_imu_gyroscope_polling.c:42:6:SysTick_Handler	4	static
+../source/i3c_imu_gyroscope_polling.c:50:13:Delay_us	16	static
+../source/i3c_imu_gyroscope_polling.c:56:13:Delay_ms	16	static
+../source/i3c_imu_gyroscope_polling.c:67:10:LSM6DSO_WriteReg	56	static
+../source/i3c_imu_gyroscope_polling.c:82:10:LSM6DSO_ReadRegs	48	static
+../source/i3c_imu_gyroscope_polling.c:98:5:main	136	static
